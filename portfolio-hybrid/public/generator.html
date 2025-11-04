@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio Generator</title>
+</head>
+<body>
+  <h2>⚙️ Generate Portfolio</h2>
+  <form id="gen-form">
+    <input placeholder="Name" id="name" />
+    <input placeholder="Role" id="role" />
+    <input placeholder="Color theme" id="color" />
+    <input placeholder="Style" id="style" />
+    <input placeholder="Sections (comma separated)" id="sections" />
+    <button type="submit">Generate</button>
+  </form>
+  <pre id="output"></pre>
+
+  <script>
+    document.getElementById("gen-form").onsubmit = async (e) => {
+      e.preventDefault();
+      const body = {
+        name: name.value,
+        role: role.value,
+        color: color.value,
+        style: style.value,
+        sections: sections.value.split(",").map(s => s.trim())
+      };
+
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      output.textContent = JSON.stringify(data, null, 2);
+    };
+  </script>
+</body>
+</html>

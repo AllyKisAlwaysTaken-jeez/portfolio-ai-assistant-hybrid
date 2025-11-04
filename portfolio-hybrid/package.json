@@ -1,0 +1,16 @@
+{
+    "name": "portfolio-ai-agent",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": { "start": "node server.js" },
+    "dependencies": {
+      "express": "^4.19.2",
+      "dotenv": "^16.4.5",
+      "axios": "^1.7.2",
+      "body-parser": "^1.20.2",
+      "faiss-node": "^1.0.4",
+      "sentence-transformers": "^1.2.0",
+      "lowdb": "^7.0.1"
+    }
+  }
+  

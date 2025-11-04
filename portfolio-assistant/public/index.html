@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio Chat Assistant</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f8fa; }
+    #chat-box { max-width: 600px; margin: 40px auto; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .msg { margin-bottom: 15px; }
+    .user { color: #1a73e8; }
+    .bot { color: #333; }
+    input { width: 80%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    button { padding: 10px 15px; border: none; background: #1a73e8; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #1666c2; }
+  </style>
+</head>
+<body>
+  <div id="chat-box">
+    <h2>💬 Portfolio Design Assistant</h2>
+    <div id="messages"></div>
+    <input id="user-input" placeholder="Ask about your portfolio design..." />
+    <button onclick="sendMsg()">Send</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
