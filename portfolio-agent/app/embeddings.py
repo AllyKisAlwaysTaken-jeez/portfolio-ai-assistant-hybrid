@@ -1,3 +1,5 @@
+from sentence_transformers import SentenceTransformer
+import faiss
 import numpy as np
 from pathlib import Path
 import pickle
@@ -9,6 +11,7 @@ class EmbeddingStore:
         self.index_path = Path(index_path)
         self.meta_path = Path(meta_path)
         self._ensure_data_dir()
+
         if self.index_path.exists():
             self.index = faiss.read_index(str(self.index_path))
             with open(self.meta_path, "rb") as f:
